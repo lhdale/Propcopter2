@@ -21,7 +21,7 @@ namespace Propcopter2
         bool goRight;
         int move = 10;
         int goUp = 4;
-        int time;
+        int time = 1;
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
@@ -59,6 +59,17 @@ namespace Propcopter2
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
+            if (time == 1)
+            {
+                timer1.Interval = 60;
+                pictureBox7.Visible = true;
+            }
+            else
+            {
+                timer1.Interval = 25;
+                pictureBox7.Visible = false;
+            }
+
             Random rnd = new Random();
             int num = rnd.Next(10, 100);
 
